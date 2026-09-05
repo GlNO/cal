@@ -283,7 +283,7 @@ async function listEvents() {
     console.log(`${color.gray}${"-".repeat(48)}${color.reset}`);
 
     if (!events || events.length === 0) {
-        console.log(`\n  ${color.green}No schedule today.${color.reset}\n`);
+        console.log(`\n  ${color.green}No schedule.${color.reset}\n`);
         return;
     }
 
