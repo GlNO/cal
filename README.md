@@ -2,18 +2,6 @@
 
 A lightweight Node.js command-line calendar client that retrieves and displays Google Calendar events in a clean, readable terminal format. Perfect for developers who want quick calendar access without leaving the terminal.
 
-## ✨ Features
-
-- **Google Calendar API integration** - Direct access to your calendar events
-- **OAuth 2.0 authentication** - Secure login with state validation
-- **Persistent tokens** - Cached authentication for seamless future runs
-- **Multiple viewing modes** - Today, tomorrow, next week, and custom date ranges
-- **Clean formatting** - 12-hour AM/PM time display with colorized output
-- **Event details** - Locations, descriptions, and time information
-- **Text sanitization** - Safe terminal output without escape sequence injection
-
-## 🚀 Quick Start
-
 ```bash
 # 1. Clone and install
 git clone https://github.com/GlNO/cal.git
@@ -29,7 +17,7 @@ node index.js
 cal today
 ```
 
-## 📋 Commands
+## Commands
 
 ```bash
 cal              # Show today's events
@@ -47,7 +35,7 @@ cal help         # Show available commands
 | `cal next_wk` | Display events for next week (Monday–Sunday) |
 | `cal help` | Display usage information |
 
-## 📦 Setup
+## Setup
 
 ### Prerequisites
 
@@ -111,7 +99,7 @@ cal today
 
 On first run, the application will open your default browser to authorize access to your Google Calendar. After authorization, it stores a `token.json` file locally for future use.
 
-## 📺 Example Output
+## Example Output
 
 **Today's view:**
 ```text
@@ -141,76 +129,4 @@ September 7, 2026 - MON
 	9:30 AM - 10:30 AM
 	Location: Zoom
 ------------------------------------------------
-```
 
-## 🔒 Security
-
-### Files to Keep Private
-
-Never commit these files to version control:
-
-```text
-credentials.json
-token.json
-node_modules/
-```
-
-These files are already excluded in `.gitignore`. The `token.json` file contains a refresh token that grants access to your Google Calendar account and should be treated as a secret.
-
-### Best Practices
-
-- Keep `credentials.json` secure and never share it
-- Regenerate credentials if they're accidentally exposed
-- Run `npm link` only on trusted machines
-- Consider using environment-specific `.env` files for configuration
-
-## 🛠️ Technologies
-
-- **Node.js** - JavaScript runtime
-- **Google Calendar API** - Calendar data access
-- **OAuth 2.0** - Secure authentication protocol
-- **[googleapis](https://github.com/googleapis/google-api-nodejs-client)** - Official Google API client
-- **[colors](https://github.com/Marak/colors.js)** - Terminal color output (if used)
-
-## 🐛 Troubleshooting
-
-### "The caller does not have permission to access the requested resource"
-- Ensure the Google Calendar API is enabled in your Google Cloud project
-- Verify the OAuth consent screen is configured
-- Delete `token.json` and re-authenticate
-
-### "Calendar not found" or No events showing
-- Verify your calendar is accessible in Google Calendar
-- Check that your Google account has events in the requested date range
-- Ensure the calendar is not hidden or disabled
-
-### OAuth flow doesn't open browser
-- The application will provide a link in the terminal—copy and paste it into your browser manually
-- Verify your system has a default browser configured
-
-### "ENOENT: no such file or directory, open 'credentials.json'"
-- Ensure `credentials.json` is in the project root directory
-- Check the filename spelling—it must be lowercase
-- Verify the file contains valid JSON from Google Cloud Console
-
-### Command not found after `npm link`
-- Ensure npm's global bin directory is in your `PATH`
-- Try restarting your terminal
-- Run `npm link` again from the project directory
-
-## 📝 License
-
-This project is licensed under the MIT License. See LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Report bugs via GitHub Issues
-- Submit pull requests with improvements
-- Suggest new features or commands
-
-## 📚 Resources
-
-- [Google Calendar API Documentation](https://developers.google.com/calendar)
-- [Google API Node.js Client](https://github.com/googleapis/google-api-nodejs-client)
-- [OAuth 2.0 for Desktop Applications](https://developers.google.com/identity/protocols/oauth2/native-app)
